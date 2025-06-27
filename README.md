@@ -6,11 +6,6 @@ a Zabbix Agent using Docker and Docker Compose.
 The goal is to eventually turn this into a TrueNAS App, allowing for easy installation and management through the
 TrueNAS interface.
 
-![Zabbix Agent](https://www.zabbix.com/sites/default/files/logo/zabbix_logo.png)
-![Docker](https://www.docker.com/wp-content/uploads/2022/03/horizontal-logo-monochromatic-white.png)
-![TrueNAS](https://www.truenas.com/wp-content/uploads/2020/08/truenas-logo.png)
-
-
 ## Features
 
 - Easy deployment with Docker Compose on TrueNAS via a custom app

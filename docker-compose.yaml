@@ -1,0 +1,50 @@
+services:
+  zabbix-agent:
+    environment:
+      NVIDIA_VISIBLE_DEVICES: void
+      TRUENAS_KEY: # Your TrueNAS API key
+      TRUENAS_URL: wss://YOUR.TRUENAS.SERVER/websocket
+      TZ: # Your timezone, e.g., 'Australia/Sydney'
+      ZBX_PASSIVESERVERS: '::/0'
+      ZBX_SERVER_HOST: # Your Zabbix server hostname or IP
+      ZBX_TIMEOUT: 10
+    group_add:
+      - 568
+    hostname: truenas-zabbix-agent
+    image: lingfish/truenas-zabbix-agent
+    platform: linux/amd64
+    ports:
+      - '10050:10050'
+    privileged: False
+    pull_policy: missing
+    restart: 'no'
+    stdin_open: False
+    tty: False
+    volumes:
+      - ./conf:/etc/zabbix/zabbix_agentd.d
+x-notes: >+
+  # iX App
+
+
+  ## Security
+
+
+  ### Container: [zabbix-agent]
+
+
+  - Is running as unknown user
+
+  - Is running as unknown group
+
+  - Is running without [no-new-privileges] security option
+
+
+  ## Bug Reports and Feature Requests
+
+
+  If you find a bug in this app or have an idea for a new feature, please file
+  an issue at
+
+  https://github.com/truenas/apps
+
+x-portals: []

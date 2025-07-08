@@ -12,6 +12,12 @@ Due to security concerns from the TrueNAS team, this app is not available in the
 - Uses the official Zabbix Agent image
 - Bundles the TrueNAS API and `midclt` command to poll TrueNAS systems
 
+## Missing stuff/TODO in Zabbix template
+- [X] Add discovery rules for TrueNAS pools
+- [X] Add discovery rules for TrueNAS datasets
+- [ ] Add discovery rules for other TrueNAS stuff
+- [ ] Add graphs, triggers, etc.
+
 ## Prerequisites
 
 - [TrueNAS](https://www.truenas.com/) installed -- **minimum tested version is 25.04**
@@ -26,7 +32,7 @@ Due to security concerns from the TrueNAS team, this app is not available in the
 
 ## Configuration
 
-The actual polling of the TrueNAS system is done via the `midclt` command using Zabbix UserParameters.
+The actual polling of the TrueNAS system is done via the `midclt` command using Zabbix `UserParameters`.
 The config file is a simple one-liner, using the power of passing arguments to the `midclt` command via Zabbix
 item parameters.
 
@@ -35,11 +41,8 @@ Import the Zabbix template `truenas_agent_template.yaml` into your Zabbix server
 There is currently only discovery and items in the template.  **Pull requests are welcome and desired to add more things
 to the template, such as triggers, graphs, etc.**
 
-## Contributing
-
-Pull requests are welcome.
-
 ## Contact
 
-For questions or support, please open an issue on GitHub.
+For questions or support, please open an issue on this repo.  Though there is a thread on the TrueNAS forums, I'd prefer
+to keep the discussion here on GitHub.
 

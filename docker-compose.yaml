@@ -11,7 +11,7 @@ services:
         target: /etc/zabbix/zabbix_agentd.d/truenas.conf
     environment:
       TRUENAS_KEY: # Your TrueNAS API key
-      TRUENAS_URL: wss://YOUR.TRUENAS.SERVER/websocket
+      TRUENAS_URL: # wss://YOUR.TRUENAS.SERVER/websocket
       TZ: # Your timezone, e.g., 'Australia/Sydney'
       ZBX_PASSIVESERVERS: '::/0'
       ZBX_SERVER_HOST: # Your Zabbix server hostname or IP

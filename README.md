@@ -32,8 +32,8 @@ item parameters.
 
 Import the Zabbix template `truenas_agent_template.yaml` into your Zabbix server to get the necessary items.
 
-There is currently only discovery and items in the template.  Pull requests are welcome and desired to add more things
-to the template, such as triggers, graphs, etc.
+There is currently only discovery and items in the template.  **Pull requests are welcome and desired to add more things
+to the template, such as triggers, graphs, etc.**
 
 ## Contributing
 

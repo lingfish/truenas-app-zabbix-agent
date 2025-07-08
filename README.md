@@ -4,6 +4,7 @@ A Dockerised Zabbix agent application for TrueNAS environments. This project pro
 a Zabbix Agent using Docker and Docker Compose.
 
 Due to security concerns from the TrueNAS team, this app is not available in the official TrueNAS app catalog.
+[Sorry, I tried!](https://github.com/truenas/apps/pull/2685)
 
 ## Features
 
@@ -26,7 +27,13 @@ Due to security concerns from the TrueNAS team, this app is not available in the
 ## Configuration
 
 The actual polling of the TrueNAS system is done via the `midclt` command using Zabbix UserParameters.
-The config file needs to be mounted via a volume, to `/etc/zabbix/zabbix_agentd.d` inside the container.
+The config file is a simple one-liner, using the power of passing arguments to the `midclt` command via Zabbix
+item parameters.
+
+Import the Zabbix template `truenas_agent_template.yaml` into your Zabbix server to get the necessary items.
+
+There is currently only discovery and items in the template.  Pull requests are welcome and desired to add more things
+to the template, such as triggers, graphs, etc.
 
 ## Contributing
 

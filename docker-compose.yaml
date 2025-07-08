@@ -1,7 +1,15 @@
 services:
   zabbix-agent:
+    build:
+      dockerfile_inline: |
+        FROM zabbix/zabbix-agent:alpine-latest
+        USER root
+        RUN apk add --no-cache python3 py3-pip git jq && pip3 install --break-system-packages git+https://github.com/truenas/api_client.git
+        USER zabbix
+    configs:
+      - source: conf/truenas.conf
+        target: /etc/zabbix/zabbix_agentd.d/truenas.conf
     environment:
-      NVIDIA_VISIBLE_DEVICES: void
       TRUENAS_KEY: # Your TrueNAS API key
       TRUENAS_URL: wss://YOUR.TRUENAS.SERVER/websocket
       TZ: # Your timezone, e.g., 'Australia/Sydney'
@@ -20,31 +28,3 @@ services:
     restart: 'no'
     stdin_open: False
     tty: False
-    volumes:
-      - ./conf:/etc/zabbix/zabbix_agentd.d
-x-notes: >+
-  # iX App
-
-
-  ## Security
-
-
-  ### Container: [zabbix-agent]
-
-
-  - Is running as unknown user
-
-  - Is running as unknown group
-
-  - Is running without [no-new-privileges] security option
-
-
-  ## Bug Reports and Feature Requests
-
-
-  If you find a bug in this app or have an idea for a new feature, please file
-  an issue at
-
-  https://github.com/truenas/apps
-
-x-portals: []

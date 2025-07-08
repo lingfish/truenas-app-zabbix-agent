@@ -1,22 +1,20 @@
 # TrueNAS App: Zabbix Agent
 
-A Dockerized Zabbix Agent application for TrueNAS environments. This project provides a simple way to deploy and manage
+A Dockerised Zabbix agent application for TrueNAS environments. This project provides a simple way to deploy and manage
 a Zabbix Agent using Docker and Docker Compose.
 
-The goal is to eventually turn this into a TrueNAS App, allowing for easy installation and management through the
-TrueNAS interface.
+Due to security concerns from the TrueNAS team, this app is not available in the official TrueNAS app catalog.
 
 ## Features
 
 - Easy deployment with Docker Compose on TrueNAS via a custom app
-- Customisable configuration
 - Uses the official Zabbix Agent image
 - Bundles the TrueNAS API and `midclt` command to poll TrueNAS systems
 
 ## Prerequisites
 
 - [TrueNAS](https://www.truenas.com/) installed -- **minimum tested version is 25.04**
-- Some Zabbix items (eventually a template)
+- Installation of the Zabbix template
 
 ## Getting started
 

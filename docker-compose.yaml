@@ -7,7 +7,7 @@ services:
         RUN apk add --no-cache python3 py3-pip git jq && pip3 install --break-system-packages git+https://github.com/truenas/api_client.git
         USER zabbix
     configs:
-      - source: conf/truenas.conf
+      - source: truenas.conf
         target: /etc/zabbix/zabbix_agentd.d/truenas.conf
     environment:
       TRUENAS_KEY: # Your TrueNAS API key
@@ -28,3 +28,10 @@ services:
     restart: 'no'
     stdin_open: False
     tty: False
+configs:
+  truenas.conf:
+    file: conf/truenas.conf
+    mode: '0644'
+    uid: 0
+    gid: 0
+    name: truenas.conf

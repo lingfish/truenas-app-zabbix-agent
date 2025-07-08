@@ -16,6 +16,7 @@ services:
       ZBX_PASSIVESERVERS: '::/0'
       ZBX_SERVER_HOST: # Your Zabbix server hostname or IP
       ZBX_TIMEOUT: 10
+      ZBX_HOSTNAME: # The agent hostname
     group_add:
       - 568
     hostname: truenas-zabbix-agent

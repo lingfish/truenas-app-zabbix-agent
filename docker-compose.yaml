@@ -31,7 +31,3 @@ services:
 configs:
   truenas.conf:
     file: conf/truenas.conf
-    mode: '0644'
-    uid: 0
-    gid: 0
-    name: truenas.conf

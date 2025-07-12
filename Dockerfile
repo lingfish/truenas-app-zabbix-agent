@@ -8,4 +8,4 @@ RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
 COPY ./daemon.py /code/
 
-CMD ["fastapi", "run", "daemon.py", "--port", "8000"]
+CMD ["fastapi", "run", "daemon.py", "--host ::", "--port", "8000"]

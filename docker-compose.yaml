@@ -20,7 +20,6 @@ services:
     group_add:
       - 568
     hostname: truenas-zabbix-agent
-    image: lingfish/truenas-zabbix-agent
     platform: linux/amd64
     ports:
       - '10050:10050'
